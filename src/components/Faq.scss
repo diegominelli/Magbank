@@ -8,10 +8,6 @@
     .card-header {
       background-color: $color-faq-header;
     }
-
-    .btn-link {
-      color: #FFF;
-    }
   }
 
   &-title {
@@ -22,6 +18,10 @@
     @media screen and (min-width: 992px) {
       font-size: 3.5rem;
     }
+  }
+
+  &-clickable {
+    cursor: pointer;
   }
 }
 
