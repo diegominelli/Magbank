@@ -7,6 +7,7 @@ import './App.scss';
 
 import Home from './views/Home';
 import Login from './views/Login';
+import Dashboard from './views/Dashboard';
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
@@ -16,11 +17,14 @@ const App = () => {
       <Navbar handleCreateAcc={() => setShowModal(true)} />
 
       <Switch>
-        <Route path="/" exact>
-          <Home handleClick={() => setShowModal(true)} />
-        </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
+        <Route path="/">
+          <Home handleClick={() => setShowModal(true)} />
         </Route>
       </Switch>
 
