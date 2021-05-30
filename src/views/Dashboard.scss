@@ -1,3 +1,5 @@
+@import '../variables';
+
 .dashboard {
 
   &-user-avatar {
@@ -9,5 +11,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
+  }
+
+  &-button {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover,
+    &-active {
+      color: #FFF;
+      background-color: $color-primary;
+      text-decoration: none;
+    }
   }
 }
