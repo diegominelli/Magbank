@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Button, Tabs, Tab, Table } from 'react-bootstrap';
 
-const AccontBalance = ({ data }) => {
+const AccountBalance = ({ data }) => {
   const { latestBalance, futureBalance } = data;
   return (
     <>
@@ -72,4 +72,4 @@ const AccontBalance = ({ data }) => {
   );
 };
 
-export default AccontBalance;
+export default AccountBalance;

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faUser } from '@fortawesome/free-solid-svg-icons';
 
-import AccontBalance from '../components/AccountBalance';
+import AccountBalance from '../components/AccountBalance';
 
 import './Dashboard.scss';
 
@@ -45,32 +46,48 @@ const Dashboard = ({ className = false }) => {
               <p className="text-muted">ag: 1352 c/c: 4321-8</p>
             </Col>
           </Row>
-          <Button
-            className="dashboard-button dashboard-button-active text-left"
-            variant="link"
-            size="lg"
-            block
-          >
-            Minha Conta
-          </Button>
-          <Button
-            className="dashboard-button text-left"
-            variant="link"
-            size="lg"
-            block
-          >
-            Pagamentos
-          </Button>
-          <Button
-            className="dashboard-button text-left"
-            variant="link"
-            size="lg"
-            block
-          >
-            Extrato
-          </Button>
+          <Link to="/dashboard">
+            <Button
+              className="dashboard-button dashboard-button-active text-left"
+              variant="link"
+              size="lg"
+              block
+            >
+              Minha Conta
+            </Button>
+          </Link>
+          <Link to="/dashboard/payments">
+            <Button
+              className="dashboard-button text-left"
+              variant="link"
+              size="lg"
+              block
+            >
+              Pagamentos
+            </Button>
+          </Link>
+          <Link to="/dashboard/history">
+            <Button
+              className="dashboard-button text-left"
+              variant="link"
+              size="lg"
+              block
+            >
+              Extrato
+            </Button>
+          </Link>
         </Col>
-        <AccontBalance data={data} />
+        <Switch>
+          <Route path="/dashboard/history">
+            <h2>Extratos</h2>
+          </Route>
+          <Route path="/dashboard/payments">
+            <h2>Pagamentos</h2>
+          </Route>
+          <Route path="/dashboard">
+            <AccountBalance data={data} />
+          </Route>
+        </Switch>
       </Row>
     </Container>
   );
