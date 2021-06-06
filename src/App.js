@@ -11,6 +11,23 @@ import Dashboard from './views/Dashboard';
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
+  const [name, setName] = useState();
+  const [account, setAccount] = useState();
+  const isLogged = name && account;
+
+  const fakeAuth = {
+    login(name, account, cb) {
+      setName(name);
+      setAccount(account);
+      setTimeout(cb, 100);
+    },
+
+    logout(cb) {
+      setName();
+      setAccount();
+      setTimeout(cb, 100);
+    },
+  };
 
   return (
     <Router>
@@ -18,7 +35,7 @@ const App = () => {
 
       <Switch>
         <Route path="/login">
-          <Login />
+          <Login auth={fakeAuth} />
         </Route>
         <Route path="/dashboard">
           <Dashboard />

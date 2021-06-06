@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +9,6 @@ import AccountPayments from '../components/AccountPayments';
 import AccountHistory from '../components/AccountHistory';
 
 import './Dashboard.scss';
-import { useState } from 'react';
 
 const Dashboard = ({ className = false }) => {
   const [activeLink, setActiveLink] = useState(0);
