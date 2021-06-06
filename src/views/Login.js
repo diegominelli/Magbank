@@ -5,7 +5,7 @@ import logo from '../assets/logo.svg';
 
 import './Login.scss';
 
-const Login = ({ auth }) => {
+const Login = ({ text, auth }) => {
   const [name, setName] = useState();
   const [account, setAccount] = useState();
   const history = useHistory();
@@ -55,7 +55,7 @@ const Login = ({ auth }) => {
                 type="submit"
                 onClick={handleSubmit}
               >
-                Criar Conta
+                Entrar
               </Button>
             </Form>
           </Col>

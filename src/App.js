@@ -43,7 +43,11 @@ const App = () => {
 
   return (
     <Router>
-      <Navbar handleCreateAcc={() => setShowModal(true)} />
+      <Navbar
+        handleCreateAcc={() => setShowModal(true)}
+        logged={isLogged}
+        auth={fakeAuth}
+      />
 
       <Switch>
         <Route path="/login">
@@ -58,7 +62,11 @@ const App = () => {
       </Switch>
 
       <Footer />
-      <AccountModal show={showModal} handleClose={() => setShowModal(false)} />
+      <AccountModal
+        show={showModal}
+        handleClose={() => setShowModal(false)}
+        auth={fakeAuth}
+      />
     </Router>
   );
 };
