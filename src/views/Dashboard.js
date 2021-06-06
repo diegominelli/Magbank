@@ -7,8 +7,17 @@ import { faCircle, faUser } from '@fortawesome/free-solid-svg-icons';
 import AccountBalance from '../components/AccountBalance';
 
 import './Dashboard.scss';
+import { useState } from 'react';
 
 const Dashboard = ({ className = false }) => {
+  const [activeLink, setActiveLink] = useState(0);
+
+  const links = [
+    { text: 'Minha Conta', path: '/dashboard', exact: true },
+    { text: 'Pagamentos', path: '/dashboard/payments' },
+    { text: 'Extrato', path: '/dashboard/history' },
+  ];
+
   const data = {
     latestBalance: [
       { date: '22/07', description: 'SAQUE 24h 012345', value: '300,00' },
@@ -46,36 +55,26 @@ const Dashboard = ({ className = false }) => {
               <p className="text-muted">ag: 1352 c/c: 4321-8</p>
             </Col>
           </Row>
-          <Link to="/dashboard">
-            <Button
-              className="dashboard-button dashboard-button-active text-left"
-              variant="link"
-              size="lg"
-              block
+          {links.map(({ text, path, exact }, key) => (
+            <Link
+              className="dashboard-link"
+              to={path}
+              exact={exact ? exact : false}
+              key={key}
             >
-              Minha Conta
-            </Button>
-          </Link>
-          <Link to="/dashboard/payments">
-            <Button
-              className="dashboard-button text-left"
-              variant="link"
-              size="lg"
-              block
-            >
-              Pagamentos
-            </Button>
-          </Link>
-          <Link to="/dashboard/history">
-            <Button
-              className="dashboard-button text-left"
-              variant="link"
-              size="lg"
-              block
-            >
-              Extrato
-            </Button>
-          </Link>
+              <Button
+                className={`dashboard-button text-left ${
+                  key === activeLink ? 'dashboard-button-active' : ''
+                }`}
+                variant="link"
+                size="lg"
+                block
+                onClick={() => setActiveLink(key)}
+              >
+                {text}
+              </Button>
+            </Link>
+          ))}
         </Col>
         <Switch>
           <Route path="/dashboard/history">

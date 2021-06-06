@@ -20,12 +20,29 @@
   &-button {
     color: $color-primary;
     text-decoration: none;
+    margin-bottom: 0.5rem;
 
     &:hover,
-    &-active {
-      color: #FFF;
-      background-color: $color-primary;
+    &:focus,
+    &-active,
+    &-active:hover {
       text-decoration: none;
+    }
+
+    &:hover,
+    &-active,
+    &-active:hover {
+      color: #FFF;
+    }
+
+
+    &:hover {
+      background-color: $color-muted;
+    }
+
+    &-active,
+    &-active:hover {
+      background-color: $color-primary;
     }
   }
 
@@ -36,5 +53,11 @@
   a.nav-item.nav-link.active {
     color: $color-muted;
   }
-  
+}
+
+a.dashboard-link,
+a.dashboard-link:active,
+a.dashboard-link:focus,
+a.dashboard-link:hover {
+  text-decoration: none;
 }
