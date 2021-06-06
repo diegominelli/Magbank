@@ -10,7 +10,7 @@ import AccountHistory from '../components/AccountHistory';
 
 import './Dashboard.scss';
 
-const Dashboard = ({ className = false }) => {
+const Dashboard = ({ className = false, name, account }) => {
   const [activeLink, setActiveLink] = useState(0);
 
   const links = [
@@ -53,8 +53,8 @@ const Dashboard = ({ className = false }) => {
               </span>
             </Col>
             <Col xs={9}>
-              <h4>Diego Minelli</h4>
-              <p className="text-muted">ag: 1352 c/c: 4321-8</p>
+              <h4>{name}</h4>
+              <p className="text-muted">{account}</p>
             </Col>
           </Row>
           {links.map(({ text, path, exact }, key) => (
