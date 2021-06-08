@@ -36,7 +36,74 @@ const AccountPayments = () => (
             <Button variant="success">Continuar</Button>
           </Form>
         </Tab>
-        <Tab eventKey="transfer" title="Transferência"></Tab>
+        <Tab eventKey="transfer" title="Transferência">
+          <Form>
+            <Form.Row>
+              <Form.Group
+                as={Col}
+                md="4"
+                controlId="formTranferCode"
+                className="mt-lg-5"
+              >
+                <Form.Group controlId="formBank">
+                  <Form.Label className="mr-2" htmlFor="formBankSelect">
+                    Banco
+                  </Form.Label>
+                  <Form.Control
+                    as="select"
+                    className="mr-sm-2"
+                    id="formBankSelect"
+                    custom
+                  >
+                    <option value="0">Bradesco</option>
+                    <option value="1">Santander</option>
+                    <option value="2">Itaú</option>
+                    <option value="3">Banco Real</option>
+                  </Form.Control>
+                </Form.Group>
+              </Form.Group>
+              <Form.Group
+                as={Col}
+                md="4"
+                controlId="formAgencyCode"
+                className="mt-lg-5"
+              >
+                <Form.Label>Agência</Form.Label>
+                <Form.Control type="text" placeholder="" />
+              </Form.Group>
+              <Form.Group
+                as={Col}
+                md="4"
+                controlId="formAccountCode"
+                className="mt-lg-5"
+              >
+                <Form.Label>Conta Corrente</Form.Label>
+                <Form.Control type="text" placeholder="" />
+              </Form.Group>
+            </Form.Row>
+            <Form.Row>
+              <Form.Group
+                as={Col}
+                md="6"
+                controlId="formValueCode"
+                className="mt-lg-1 mb-lg-5"
+              >
+                <Form.Label>Valor de Transferência</Form.Label>
+                <Form.Control type="text" placeholder="" />
+              </Form.Group>
+              <Form.Group
+                as={Col}
+                md="6"
+                controlId="formExtractCode"
+                className="mt-lg-1"
+              >
+                <Form.Label>Identificação nos extratos</Form.Label>
+                <Form.Control type="text" placeholder="" />
+              </Form.Group>
+            </Form.Row>
+            <Button variant="success">Continuar</Button>
+          </Form>
+        </Tab>
       </Tabs>
     </Col>
   </>
