@@ -9,9 +9,24 @@ const AccountHistory = ({ data }) => {
       <h3 className="mt-4">Extrato de conta corrente</h3>
 
       <Table>
-        {history.map((entry) => (
-          <h2>{entry}</h2>
-        ))}
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Valor (R$)</th>
+            <th>Saldo (R$)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {history.map(({ date, description, value, balance }) => (
+            <tr>
+              <td>{date}</td>
+              <td>{description}</td>
+              <td>{value}</td>
+              <td>{balance}</td>
+            </tr>
+          ))}
+        </tbody>
       </Table>
     </Col>
   );

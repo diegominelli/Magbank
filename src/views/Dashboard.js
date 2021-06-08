@@ -33,7 +33,74 @@ const Dashboard = ({ className = false, name, account }) => {
       { date: '22/09', description: 'INTERNET  852102', value: '150,00' },
       { date: '08/11', description: 'CLARO  4568213', value: '250,00' },
     ],
-    history: ['histórico 1', 'histórico 2'],
+    history: [
+      {
+        date: '02/10',
+        description: 'AÇOUGUE 789456',
+        value: '90,00',
+        balance: '',
+      },
+      {
+        date: '22/07',
+        description: 'SAQUE 24h 012345',
+        value: '300,00',
+        balance: '90,00',
+      },
+      {
+        date: '21/07',
+        description: 'SUPERMERCADO 89758945',
+        value: '275,00',
+        balance: '',
+      },
+      {
+        date: '20/07',
+        description: 'NETFLIX 246589',
+        value: '30,00',
+        balance: '',
+      },
+      {
+        date: '28/07',
+        description: 'FARMÁCIA  324650',
+        value: '350,00',
+        balance: '30,50',
+      },
+      {
+        date: '18/07',
+        description: 'BAR  752161',
+        value: '150,00',
+        balance: '',
+      },
+      {
+        date: '22/07',
+        description: 'SAQUE 24h 012345',
+        value: '300,00',
+        balance: '34,00',
+      },
+      {
+        date: '21/07',
+        description: 'SUPERMERCADO 89758945',
+        value: '275,00',
+        balance: '',
+      },
+      {
+        date: '20/07',
+        description: 'NETFLIX 246589',
+        value: '30,00',
+        balance: '',
+      },
+      {
+        date: '28/07',
+        description: 'FARMÁCIA  324650',
+        value: '350,00',
+        balance: '79,00',
+      },
+      {
+        date: '18/07',
+        description: 'BAR  752161',
+        value: '150,00',
+        balance: '',
+      },
+    ],
   };
 
   return (
